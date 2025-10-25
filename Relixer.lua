@@ -208,6 +208,30 @@ function Relixer_FlameShockMin()
     end
 end
 
+function Relixer_FireShock()
+
+    local shockCooldown = GetCooldown(getSpellId("Flame Shock"))
+
+	if not IsRelicEquipped("Totem of Rage") and shockCooldown == 0 and UnitCanAttack("player", "target")  and IsSpellInRange("Flame Shock") == 1 then
+		--QueueScript('EquipItemByName("Totem of the Stonebreaker");CastSpellByName("Flame Shock(Rank 1)")')
+		CastSwapByName("Flame Shock", nil, "Totem of Rage")
+	else
+		CastSpellByName("Flame Shock")
+    end
+end
+
+function Relixer_MB()
+
+    local shockCooldown = GetCooldown(getSpellId("Molten Blast"))
+
+	if not IsRelicEquipped("Totem of Eruption") and shockCooldown == 0 and UnitCanAttack("player", "target")  and IsSpellInRange("Flame Shock") == 1 then
+		--QueueScript('EquipItemByName("Totem of the Stonebreaker");CastSpellByName("Flame Shock(Rank 1)")')
+		CastSwapByName("Molten Blast", nil, "Totem of Eruption")
+	else
+		CastSpellByName("Molten Blast")
+    end
+end
+
 ------ SLASH COMMANDS ------
 
 SLASH_RELIXER_LS1 = "/relixerls"
@@ -230,3 +254,9 @@ SlashCmdList["RELIXER_FLAMESHOCKMAX"] = Relixer_FlameShockMax
 
 SLASH_RELIXER_FLAMESHOCKMIN1 = "/relixerflameshockmin"
 SlashCmdList["RELIXER_FLAMESHOCKMIN"] = Relixer_FlameShockMin
+
+SLASH_RELIXER_FIRESHOCK1 = "/relixerfireshock"
+SlashCmdList["RELIXER_FIRESHOCK"] = Relixer_FireShock
+
+SLASH_RELIXER_MB1 = "/relixermb"
+SlashCmdList["RELIXER_MB"] = Relixer_MB
