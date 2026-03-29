@@ -13,6 +13,9 @@ https://github.com/pepopo978/NampowerSettings<br/>
 /relixerearthshockmin<br/>
 ## Lightning Strike:<br/>
 /relixerls<br/>
+## Relic Monitor Frame:<br/>
+/relixermonitor (toggle show/hide)<br/>
+/relixermonitorlock (toggle lock/unlock drag, default: locked)<br/>
 # To Do List:<br/>
 Currently will still swap relic but not cast if you are facing your back to the target.<br/>
 Add Totem of Earthstorm and Totem of the Calming River.
